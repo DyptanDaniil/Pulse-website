@@ -1,3 +1,11 @@
-h1{
-    color: red;
+@import 'base/variables';
+*{
+    font-family: 'MuseoModerno', cursive;
 }
+.container {
+    max-width: 950px;
+    margin: 0 auto;
+}
+@import 'blocks/promo';
+@import 'blocks/header';
+ 
