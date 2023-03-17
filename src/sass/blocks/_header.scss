@@ -25,4 +25,8 @@
         color: #FFFFFF;
         text-decoration: none;
     }
+    &__contscts {
+        display: flex;
+        flex-direction: column;
+    }
 }
