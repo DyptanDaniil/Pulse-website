@@ -1,0 +1,35 @@
+.reviews {
+    padding-bottom: 48px;
+    min-height: 963px;
+    &__title {
+        font-weight: 700;
+        font-size: 30px;
+        color: #0D0D0D;
+        text-transform: uppercase;
+        text-align: center;
+    }
+    &__wrapper {
+        padding-left: 230px;
+        &-item{
+            position: relative;
+            margin-top: 60px;
+            &::before{
+                content: ' ';
+                position: absolute;
+                width: 169px;
+                height: 169px;
+                background: url(../../icons/reviews/1.svg);
+                left: -200px;
+                top: 8px;
+            }
+            &:nth-child(2)::before{
+                background: url(../../icons/reviews/2.svg);
+            }
+            &:nth-child(3)::before{
+                background: url(../../icons/reviews/3.svg);
+            }
+            
+        }
+    }
+
+}
