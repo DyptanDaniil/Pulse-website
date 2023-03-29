@@ -3,8 +3,8 @@ $(document).ready(function(){
         speed: 1200,
         slidesToShow: 1,
         slidesToScroll: 1,
-        prevArrow: '<button type="button" class="slick-prev"><img src="../icons/scroll/left.svg"</button>',
-        nextArrow: '<button type="button" class="slick-next"><img src="../icons/scroll/right.svg"</button>',
+        prevArrow: '<button type="button" class="slick-prev"><img src="icons/scroll/left.svg"</button>',
+        nextArrow: '<button type="button" class="slick-next"><img src="icons/scroll/right.svg"</button>',
         responsive: [
             {
                 breakpoint: 992,
@@ -59,5 +59,20 @@ $(document).ready(function(){
             $('#order .modal__descr').text($('.catalog-item__subtitle').eq(i).text());
             $('.overlay, #order').fadeIn('slow');
         });
+    });
+    $('form').submit(function(e) {
+        e.preventDefault();
+        $.ajax({
+            type: "POST",
+            url: "mailer/smart.php",
+            data: $(this).serialize()
+        }).done(function() {
+            $(this).find("input").val("");
+            $('#consultation, #order').fadeOut();
+            $('.overlay, #thanks').fadeIn('slow');
+
+            $('form').trigger('reset');
+        });
+        return false;
     });
 });
